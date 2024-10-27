@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  restorani_spremnik:
+    image: restorani:latest
+    container_name: restorani_spremnik
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mojalozinka
+      - POSTGRES_DB=RestoraniDB
+    ports:
+      - "5435:5432"
+    volumes:
+      - restorani_data:/var/lib/postgresql/data
+
+volumes:
+  restorani_data:
