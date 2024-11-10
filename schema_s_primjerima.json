@@ -1,0 +1,992 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://or.fer.unizg.hr./restorani.json",
+    "type": "array",
+    "default": [],
+    "title": "Restorani",
+    "items": {
+        "type": "object",
+        "title": "Restoran",
+        "required": [
+            "ime",
+            "tip kuhinje",
+            "lokacija",
+            "radno vrijeme",
+            "broj sjedecih mjesta",
+            "ocjena",
+            "cjenovni rang",
+            "mogucnost dostave",
+            "godina otvaranja",
+            "popularna jela"
+        ],
+        "properties": {
+            "ime": {
+                "type": "string",
+                "title": "ime restorana",
+                "examples": [
+                    "Takenoko",
+                    "L'oro Di Napoli",
+                    "El Toro",
+                    "La Štruk",
+                    "Zinfandel's",
+                    "Vinodol",
+                    "ManO2",
+                    "Konoba Mate",
+                    "Curry Bowl",
+                    "Pantarul"
+                ]
+            },
+            "tip kuhinje": {
+                "type": "string",
+                "title": "tip kuhinje",
+                "examples": [
+                    "japansko-peruanska",
+                    "talijanska, napuljske pizze",
+                    "steakhouse, latinoamerička",
+                    "tradicionalna",
+                    "mediteranska, moderna",
+                    "tradicionalona",
+                    "steakhouse",
+                    "šrilankanska",
+                    "moderna"
+                ]
+            },
+            "lokacija": {
+                "type": "string",
+                "title": "lokacija",
+                "examples": [
+                    "Preradovićeva ulica 22, Zagreb",
+                    "Tkalčićeva ulica 70, Zagreb",
+                    "Ulica fra Filipa Grabovca 1, Zagreb",
+                    "Skalinska 5, Zagreb",
+                    "Mihanovićeva 1, Zagreb ",
+                    "Nikole Tesle 10, Zagreb",
+                    "Radnička 50, Zagreb",
+                    "Pupnat 28, Korčula",
+                    "Vlaška ulica 44, Zagreb",
+                    "Kralja Tomislava 1, Dubrovnik"
+                ]
+            },
+            "radno vrijeme": {
+                "type": "string",
+                "title": "radno vrijeme",
+                "examples": [
+                    "12:00 - 00:00",
+                    "12:00 - 22:30",
+                    "12:00 - 01:00",
+                    "11:00 - 22:00",
+                    "06:30 - 23:00",
+                    "12:00 - 23:00"
+                ]
+            },
+            "broj sjedecih mjesta": {
+                "type": "integer",
+                "title": "broj sjedecih mjesta",
+                "examples": [
+                    100,
+                    80,
+                    30,
+                    130,
+                    70,
+                    50,
+                    60
+                ]
+            },
+            "ocjena": {
+                "type": "number",
+                "title": "ocjena",
+                "examples": [
+                    4.6,
+                    4.4,
+                    4.7,
+                    4.5,
+                    4.8
+                ]
+            },
+            "cjenovni rang": {
+                "type": "string",
+                "title": "cjenovni rang",
+                "examples": [
+                    "$$$",
+                    "$$",
+                    "$"
+                ]
+            },
+            "mogucnost dostave": {
+                "type": "boolean",
+                "title": "mogucnost dostave",
+                "examples": [
+                    true,
+                    false
+                ]
+            },
+            "godina otvaranja": {
+                "type": "integer",
+                "title": "godina otvaranja",
+                "examples": [
+                    2000,
+                    2018,
+                    2017,
+                    2013,
+                    2004,
+                    2012,
+                    2015,
+                    2014
+                ]
+            },
+            "popularna jela": {
+                "type": "array",
+                "title": "popularna jela",
+                "items": {
+                    "type": "object",
+                    "title": "popularno jelo",
+                    "required": [
+                        "ime",
+                        "cijena"
+                    ],
+                    "properties": {
+                        "ime": {
+                            "type": "string",
+                            "title": "ime",
+                            "examples": [
+                                "Panco calamari",
+                                "Crumbs pistachio sseabass",
+                                "Crni bakalar u saiko arančinom umaku",
+                                "Nikkei losos",
+                                "Margherita",
+                                "Napolitana",
+                                "Capricciosa",
+                                "Lasagna",
+                                "Tacos kozica",
+                                "El Toro ceviche kozice",
+                                "Wagyu ribeye",
+                                "Beef wellington",
+                                "Štrukli sa sirom",
+                                "Štrukli s tartufima",
+                                "Slatki štrukli s borovnicama",
+                                "Slatki štrukli s jabukama i cimetom",
+                                "Slatki štrukli s orasima i medom",
+                                "Poširani list s mousseom od limunske trave",
+                                "Kozlić",
+                                "Wagyu Entrecôte no. 4",
+                                "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+                                "Biftek s umakom od crnog vina i tartufa",
+                                "Domaći zagorski štrukli",
+                                "ManO2 steak",
+                                "Jelen",
+                                "Wagyu kiwami",
+                                "Pašticada s makarunima",
+                                "Fritaja od pršuta s divljim šparogama",
+                                "Curry od piletine",
+                                "Kothu s piletinom",
+                                "Kiri malu",
+                                "Sporo kuhani bikovi obraz",
+                                "Povrtni rižoto s mascarponeom",
+                                "Zapečena guščja jetra"
+                            ]
+                        },
+                        "cijena": {
+                            "type": "number",
+                            "title": "cijena",
+                            "examples": [
+                                17.00,
+                                32.00,
+                                50.00,
+                                30.00,
+                                8.00,
+                                10.00,
+                                12.00,
+                                15.00,
+                                11.00,
+                                19.00,
+                                33.00,
+                                295.00,
+                                6.50,
+                                7.50,
+                                7.00,
+                                45.00,
+                                49.00,
+                                63.00,
+                                24.00,
+                                40.00,
+                                48.00,
+                                80.00,
+                                25.00,
+                                12.50,
+                                28.00
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "ime": "Panco calamari",
+                        "cijena": 17.00
+                    },
+                    {
+                        "ime": "Crumbs pistachio sseabass",
+                        "cijena": 32.00
+                    },
+                    {
+                        "ime": "Crni bakalar u saiko arančinom umaku",
+                        "cijena": 50.00
+                    },
+                    {
+                        "ime": "Nikkei losos",
+                        "cijena": 30.00
+                    },
+                    {
+                        "ime": "Margherita",
+                        "cijena": 8.00
+                    },
+                    {
+                        "ime": "Napolitana",
+                        "cijena": 10.00
+                    },
+                    {
+                        "ime": "Capricciosa",
+                        "cijena": 12.00
+                    },
+                    {
+                        "ime": "Lasagna",
+                        "cijena": 15.00
+                    },
+                    {
+                        "ime": "Tacos kozica",
+                        "cijena": 11.00
+                    },
+                    {
+                        "ime": "El Toro ceviche kozice",
+                        "cijena": 19.00
+                    },
+                    {
+                        "ime": "Wagyu ribeye",
+                        "cijena": 33.00
+                    },
+                    {
+                        "ime": "Beef wellington",
+                        "cijena": 295.00
+                    },
+                    {
+                        "ime": "Štrukli sa sirom",
+                        "cijena": 6.50
+                    },
+                    {
+                        "ime": "Štrukli s tartufima",
+                        "cijena": 7.50
+                    },
+                    {
+                        "ime": "Slatki štrukli s borovnicama",
+                        "cijena": 7.00
+                    },
+                    {
+                        "ime": "Slatki štrukli s jabukama i cimetom",
+                        "cijena": 6.50
+                    },
+                    {
+                        "ime": "Slatki štrukli s orasima i medom",
+                        "cijena": 7.00
+                    },
+                    {
+                        "ime": "Poširani list s mousseom od limunske trave",
+                        "cijena": 45.00
+                    },
+                    {
+                        "ime": "Kozlić",
+                        "cijena": 49.00
+                    },
+                    {
+                        "ime": "Wagyu Entrecôte no. 4",
+                        "cijena": 63.00
+                    },
+                    {
+                        "ime": "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+                        "cijena": 24.00
+                    },
+                    {
+                        "ime": "Biftek s umakom od crnog vina i tartufa",
+                        "cijena": 40.00
+                    },
+                    {
+                        "ime": "Domaći zagorski štrukli",
+                        "cijena": 11.00
+                    },
+                    {
+                        "ime": "ManO2 steak",
+                        "cijena": 48.00
+                    },
+                    {
+                        "ime": "Jelen",
+                        "cijena": 63.00
+                    },
+                    {
+                        "ime": "Wagyu kiwami",
+                        "cijena": 80.00
+                    },
+                    {
+                        "ime": "Pašticada s makarunima",
+                        "cijena": 25.00
+                    },
+                    {
+                        "ime": "Fritaja od pršuta s divljim šparogama",
+                        "cijena": 12.00
+                    },
+                    {
+                        "ime": "Curry od piletine",
+                        "cijena": 12.50
+                    },
+                    {
+                        "ime": "Kothu s piletinom",
+                        "cijena": 12.00
+                    },
+                    {
+                        "ime": "Kiri malu",
+                        "cijena": 12.50
+                    },
+                    {
+                        "ime": "Sporo kuhani bikovi obraz",
+                        "cijena": 28.00
+                    },
+                    {
+                        "ime": "Povrtni rižoto s mascarponeom",
+                        "cijena": 19.00
+                    },
+                    {
+                        "ime": "Zapečena guščja jetra",
+                        "cijena": 28.00
+                    }]
+                },
+                "examples": [
+                    [{
+                        "ime": "Panco calamari",
+                        "cijena": 17.00
+                    },
+                    {
+                        "ime": "Crumbs pistachio sseabass",
+                        "cijena": 32.00
+                    },
+                    {
+                        "ime": "Crni bakalar u saiko arančinom umaku",
+                        "cijena": 50.00
+                    },
+                    {
+                        "ime": "Nikkei losos",
+                        "cijena": 30.00
+                    }],
+                    [{
+                        "ime": "Margherita",
+                        "cijena": 8.00
+                    },
+                    {
+                        "ime": "Napolitana",
+                        "cijena": 10.00
+                    },
+                    {
+                        "ime": "Capricciosa",
+                        "cijena": 12.00
+                    },
+                    {
+                        "ime": "Lasagna",
+                        "cijena": 15.00
+                    }],
+                    [{
+                        "ime": "Tacos kozica",
+                        "cijena": 11.00
+                    },
+                    {
+                        "ime": "El Toro ceviche kozice",
+                        "cijena": 19.00
+                    },
+                    {
+                        "ime": "Wagyu ribeye",
+                        "cijena": 33.00
+                    },
+                    {
+                        "ime": "Beef wellington",
+                        "cijena": 295.00
+                    }],
+                    [{
+                        "ime": "Štrukli sa sirom",
+                        "cijena": 6.50
+                    },
+                    {
+                        "ime": "Štrukli s tartufima",
+                        "cijena": 7.50
+                    },
+                    {
+                        "ime": "Slatki štrukli s borovnicama",
+                        "cijena": 7.00
+                    },
+                    {
+                        "ime": "Slatki štrukli s jabukama i cimetom",
+                        "cijena": 6.50
+                    },
+                    {
+                        "ime": "Slatki štrukli s orasima i medom",
+                        "cijena": 7.00
+                    }],
+                    [{
+                        "ime": "Poširani list s mousseom od limunske trave",
+                        "cijena": 45.00
+                    },
+                    {
+                        "ime": "Kozlić",
+                        "cijena": 49.00
+                    },
+                    {
+                        "ime": "Wagyu Entrecôte no. 4",
+                        "cijena": 63.00
+                    }],
+                    [{
+                        "ime": "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+                        "cijena": 24.00
+                    },
+                    {
+                        "ime": "Biftek s umakom od crnog vina i tartufa",
+                        "cijena": 40.00
+                    },
+                    {
+                        "ime": "Domaći zagorski štrukli",
+                        "cijena": 11.00
+                    }],
+                    [{
+                        "ime": "ManO2 steak",
+                        "cijena": 48.00
+                    },
+                    {
+                        "ime": "Jelen",
+                        "cijena": 63.00
+                    },
+                    {
+                        "ime": "Wagyu kiwami",
+                        "cijena": 80.00
+                    }],
+                    [{
+                        "ime": "Pašticada s makarunima",
+                        "cijena": 25.00
+                    },
+                    {
+                        "ime": "Fritaja od pršuta s divljim šparogama",
+                        "cijena": 12.00
+                    }],
+                    [{
+                        "ime": "Curry od piletine",
+                        "cijena": 12.50
+                    },
+                    {
+                        "ime": "Kothu s piletinom",
+                        "cijena": 12.00
+                    },
+                    {
+                        "ime": "Kiri malu",
+                        "cijena": 12.50
+                    }],
+                    [{
+                        "ime": "Sporo kuhani bikovi obraz",
+                        "cijena": 28.00
+                    },
+                    {
+                        "ime": "Povrtni rižoto s mascarponeom",
+                        "cijena": 19.00
+                    },
+                    {
+                        "ime": "Zapečena guščja jetra",
+                        "cijena": 28.00
+                    }]
+                ]
+            }
+        },
+        "examples": [{
+            "ime": "Takenoko",
+            "tip kuhinje": "japansko-peruanska",
+            "lokacija": "Preradovićeva ulica 22, Zagreb",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 100,
+            "ocjena": 4.6,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Panco calamari",
+                "cijena": 17.00
+            },
+            {
+                "ime": "Crumbs pistachio sseabass",
+                "cijena": 32.00
+            },
+            {
+                "ime": "Crni bakalar u saiko arančinom umaku",
+                "cijena": 50.00
+            },
+            {
+                "ime": "Nikkei losos",
+                "cijena": 30.00
+            }]
+        },
+        {
+            "ime": "L'oro Di Napoli",
+            "tip kuhinje": "talijanska, napuljske pizze",
+            "lokacija": "Tkalčićeva ulica 70, Zagreb",
+            "radno vrijeme": "12:00 - 22:30",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.4,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2018,
+            "popularna jela": [{
+                "ime": "Margherita",
+                "cijena": 8.00
+            },
+            {
+                "ime": "Napolitana",
+                "cijena": 10.00
+            },
+            {
+                "ime": "Capricciosa",
+                "cijena": 12.00
+            },
+            {
+                "ime": "Lasagna",
+                "cijena": 15.00
+            }]
+        },
+        {
+            "ime": "El Toro",
+            "tip kuhinje": "steakhouse, latinoamerička",
+            "lokacija": "Ulica fra Filipa Grabovca 1, Zagreb",
+            "radno vrijeme": "12:00 - 01:00",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2017,
+            "popularna jela": [{
+                "ime": "Tacos kozica",
+                "cijena": 11.00
+            },
+            {
+                "ime": "El Toro ceviche kozice",
+                "cijena": 19.00
+            },
+            {
+                "ime": "Wagyu ribeye",
+                "cijena": 33.00
+            },
+            {
+                "ime": "Beef wellington",
+                "cijena": 295.00
+            }]
+        },
+        {
+            "ime": "La Štruk",
+            "tip kuhinje": "tradicionalna",
+            "lokacija": "Skalinska 5, Zagreb",
+            "radno vrijeme": "11:00 - 22:00",
+            "broj sjedecih mjesta": 30,
+            "ocjena": 4.5,
+            "cjenovni rang": "$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2013,
+            "popularna jela": [{
+                "ime": "Štrukli sa sirom",
+                "cijena": 6.50
+            },
+            {
+                "ime": "Štrukli s tartufima",
+                "cijena": 7.50
+            },
+            {
+                "ime": "Slatki štrukli s borovnicama",
+                "cijena": 7.00
+            },
+            {
+                "ime": "Slatki štrukli s jabukama i cimetom",
+                "cijena": 6.50
+            },
+            {
+                "ime": "Slatki štrukli s orasima i medom",
+                "cijena": 7.00
+            }]
+        },
+        {
+            "ime": "Zinfandel's",
+            "tip kuhinje": "mediteranska, moderna",
+            "lokacija": "Mihanovićeva 1, Zagreb ",
+            "radno vrijeme": "06:30 - 23:00",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2004,
+            "popularna jela": [{
+                "ime": "Poširani list s mousseom od limunske trave",
+                "cijena": 45.00
+            },
+            {
+                "ime": "Kozlić",
+                "cijena": 49.00
+            },
+            {
+                "ime": "Wagyu Entrecôte no. 4",
+                "cijena": 63.00
+            }]
+        },
+        {
+            "ime": "Vinodol",
+            "tip kuhinje": "tradicionalona",
+            "lokacija": "Nikole Tesle 10, Zagreb",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 130,
+            "ocjena": 4.5,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+                "cijena": 24.00
+            },
+            {
+                "ime": "Biftek s umakom od crnog vina i tartufa",
+                "cijena": 40.00
+            },
+            {
+                "ime": "Domaći zagorski štrukli",
+                "cijena": 11.00
+            }]
+        },
+        {
+            "ime": "ManO2",
+            "tip kuhinje": "steakhouse",
+            "lokacija": "Radnička 50, Zagreb",
+            "radno vrijeme": "12:00 - 01:00",
+            "broj sjedecih mjesta": 70,
+            "ocjena": 4.6,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2012,
+            "popularna jela": [{
+                "ime": "ManO2 steak",
+                "cijena": 48.00
+            },
+            {
+                "ime": "Jelen",
+                "cijena": 63.00
+            },
+            {
+                "ime": "Wagyu kiwami",
+                "cijena": 80.00
+            }]
+        },
+        {
+            "ime": "Konoba Mate",
+            "tip kuhinje": "tradicionalna",
+            "lokacija": "Pupnat 28, Korčula",
+            "radno vrijeme": "12:00 - 23:00",
+            "broj sjedecih mjesta": 50,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Pašticada s makarunima",
+                "cijena": 25.00
+            },
+            {
+                "ime": "Fritaja od pršuta s divljim šparogama",
+                "cijena": 12.00
+            }]
+        },
+        {
+            "ime": "Curry Bowl",
+            "tip kuhinje": "šrilankanska",
+            "lokacija": "Vlaška ulica 44, Zagreb",
+            "radno vrijeme": "11:00 - 22:00",
+            "broj sjedecih mjesta": 50,
+            "ocjena": 4.7,
+            "cjenovni rang": "$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2015,
+            "popularna jela": [{
+                "ime": "Curry od piletine",
+                "cijena": 12.50
+            },
+            {
+                "ime": "Kothu s piletinom",
+                "cijena": 12.00
+            },
+            {
+                "ime": "Kiri malu",
+                "cijena": 12.50
+            }]
+        },
+        {
+            "ime": "Pantarul",
+            "tip kuhinje": "moderna",
+            "lokacija": "Kralja Tomislava 1, Dubrovnik",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 60,
+            "ocjena": 4.8,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2014,
+            "popularna jela": [{
+                "ime": "Sporo kuhani bikovi obraz",
+                "cijena": 28.00
+            },
+            {
+                "ime": "Povrtni rižoto s mascarponeom",
+                "cijena": 19.00
+            },
+            {
+                "ime": "Zapečena guščja jetra",
+                "cijena": 28.00
+            }]
+        }]
+    },
+    "examples": [
+        [{
+            "ime": "Takenoko",
+            "tip kuhinje": "japansko-peruanska",
+            "lokacija": "Preradovićeva ulica 22, Zagreb",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 100,
+            "ocjena": 4.6,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Panco calamari",
+                "cijena": 17.00
+            },
+            {
+                "ime": "Crumbs pistachio sseabass",
+                "cijena": 32.00
+            },
+            {
+                "ime": "Crni bakalar u saiko arančinom umaku",
+                "cijena": 50.00
+            },
+            {
+                "ime": "Nikkei losos",
+                "cijena": 30.00
+            }]
+        },
+        {
+            "ime": "L'oro Di Napoli",
+            "tip kuhinje": "talijanska, napuljske pizze",
+            "lokacija": "Tkalčićeva ulica 70, Zagreb",
+            "radno vrijeme": "12:00 - 22:30",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.4,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2018,
+            "popularna jela": [{
+                "ime": "Margherita",
+                "cijena": 8.00
+            },
+            {
+                "ime": "Napolitana",
+                "cijena": 10.00
+            },
+            {
+                "ime": "Capricciosa",
+                "cijena": 12.00
+            },
+            {
+                "ime": "Lasagna",
+                "cijena": 15.00
+            }]
+        },
+        {
+            "ime": "El Toro",
+            "tip kuhinje": "steakhouse, latinoamerička",
+            "lokacija": "Ulica fra Filipa Grabovca 1, Zagreb",
+            "radno vrijeme": "12:00 - 01:00",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2017,
+            "popularna jela": [{
+                "ime": "Tacos kozica",
+                "cijena": 11.00
+            },
+            {
+                "ime": "El Toro ceviche kozice",
+                "cijena": 19.00
+            },
+            {
+                "ime": "Wagyu ribeye",
+                "cijena": 33.00
+            },
+            {
+                "ime": "Beef wellington",
+                "cijena": 295.00
+            }]
+        },
+        {
+            "ime": "La Štruk",
+            "tip kuhinje": "tradicionalna",
+            "lokacija": "Skalinska 5, Zagreb",
+            "radno vrijeme": "11:00 - 22:00",
+            "broj sjedecih mjesta": 30,
+            "ocjena": 4.5,
+            "cjenovni rang": "$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2013,
+            "popularna jela": [{
+                "ime": "Štrukli sa sirom",
+                "cijena": 6.50
+            },
+            {
+                "ime": "Štrukli s tartufima",
+                "cijena": 7.50
+            },
+            {
+                "ime": "Slatki štrukli s borovnicama",
+                "cijena": 7.00
+            },
+            {
+                "ime": "Slatki štrukli s jabukama i cimetom",
+                "cijena": 6.50
+            },
+            {
+                "ime": "Slatki štrukli s orasima i medom",
+                "cijena": 7.00
+            }]
+        },
+        {
+            "ime": "Zinfandel's",
+            "tip kuhinje": "mediteranska, moderna",
+            "lokacija": "Mihanovićeva 1, Zagreb ",
+            "radno vrijeme": "06:30 - 23:00",
+            "broj sjedecih mjesta": 80,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2004,
+            "popularna jela": [{
+                "ime": "Poširani list s mousseom od limunske trave",
+                "cijena": 45.00
+            },
+            {
+                "ime": "Kozlić",
+                "cijena": 49.00
+            },
+            {
+                "ime": "Wagyu Entrecôte no. 4",
+                "cijena": 63.00
+            }]
+        },
+        {
+            "ime": "Vinodol",
+            "tip kuhinje": "tradicionalona",
+            "lokacija": "Nikole Tesle 10, Zagreb",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 130,
+            "ocjena": 4.5,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+                "cijena": 24.00
+            },
+            {
+                "ime": "Biftek s umakom od crnog vina i tartufa",
+                "cijena": 40.00
+            },
+            {
+                "ime": "Domaći zagorski štrukli",
+                "cijena": 11.00
+            }]
+        },
+        {
+            "ime": "ManO2",
+            "tip kuhinje": "steakhouse",
+            "lokacija": "Radnička 50, Zagreb",
+            "radno vrijeme": "12:00 - 01:00",
+            "broj sjedecih mjesta": 70,
+            "ocjena": 4.6,
+            "cjenovni rang": "$$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2012,
+            "popularna jela": [{
+                "ime": "ManO2 steak",
+                "cijena": 48.00
+            },
+            {
+                "ime": "Jelen",
+                "cijena": 63.00
+            },
+            {
+                "ime": "Wagyu kiwami",
+                "cijena": 80.00
+            }]
+        },
+        {
+            "ime": "Konoba Mate",
+            "tip kuhinje": "tradicionalna",
+            "lokacija": "Pupnat 28, Korčula",
+            "radno vrijeme": "12:00 - 23:00",
+            "broj sjedecih mjesta": 50,
+            "ocjena": 4.7,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2000,
+            "popularna jela": [{
+                "ime": "Pašticada s makarunima",
+                "cijena": 25.00
+            },
+            {
+                "ime": "Fritaja od pršuta s divljim šparogama",
+                "cijena": 12.00
+            }]
+        },
+        {
+            "ime": "Curry Bowl",
+            "tip kuhinje": "šrilankanska",
+            "lokacija": "Vlaška ulica 44, Zagreb",
+            "radno vrijeme": "11:00 - 22:00",
+            "broj sjedecih mjesta": 50,
+            "ocjena": 4.7,
+            "cjenovni rang": "$",
+            "mogucnost dostave": true,
+            "godina otvaranja": 2015,
+            "popularna jela": [{
+                "ime": "Curry od piletine",
+                "cijena": 12.50
+            },
+            {
+                "ime": "Kothu s piletinom",
+                "cijena": 12.00
+            },
+            {
+                "ime": "Kiri malu",
+                "cijena": 12.50
+            }]
+        },
+        {
+            "ime": "Pantarul",
+            "tip kuhinje": "moderna",
+            "lokacija": "Kralja Tomislava 1, Dubrovnik",
+            "radno vrijeme": "12:00 - 00:00",
+            "broj sjedecih mjesta": 60,
+            "ocjena": 4.8,
+            "cjenovni rang": "$$",
+            "mogucnost dostave": false,
+            "godina otvaranja": 2014,
+            "popularna jela": [{
+                "ime": "Sporo kuhani bikovi obraz",
+                "cijena": 28.00
+            },
+            {
+                "ime": "Povrtni rižoto s mascarponeom",
+                "cijena": 19.00
+            },
+            {
+                "ime": "Zapečena guščja jetra",
+                "cijena": 28.00
+            }]
+        }]
+    ]
+}

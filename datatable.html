@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prikaz podataka o restoranima</title>
+</head>
+<body>
+    <h1>Prikaz podataka o restoranima</h1>
+    
+    <!--form za filtriranje-->
+    <form id="filterForm">
+        <label for="filterText">Pretraži:</label>
+        <input type="text" id="filterText" name="filterText" placeholder="Upišite pojam">
+        
+        <label for="filterAttribute">Pretraži po atributu:</label>
+        <select id="filterAttribute" name="filterAttribute">
+            <option value="all">Svi atributi</option>
+            <option value="ime">Ime</option>
+            <option value="tip_kuhinje">Tip kuhinje</option>
+            <option value="lokacija">Lokacija</option>
+            <option value="radno_vrijeme">Radno vrijeme</option>
+            <option value="broj_sjedecih_mjesta">Broj sjedećih mjesta</option>
+            <option value="prosjecna_ocjena">Ocjena</option>
+            <option value="cjenovni_rang">Cjenovni rang</option>
+            <option value="mogucnost_dostave">Mogućnost dostave</option>
+            <option value="godina_otvaranja">Godina otvaranja</option>
+            <option value="naziv_jela">Popularna jela</option>
+            <option value="cijena">Cijena jela</option>
+
+        </select>
+        <button type="button" onclick="filterData()">Filtriraj</button>
+    </form>
+    
+    <!--glavna tablica -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Ime</th>
+                <th>Tip kuhinje</th>
+                <th>Lokacija</th>
+                <th>Radno vrijeme</th>
+                <th>Broj sjedećih mjesta</th>
+                <th>Ocjena</th>
+                <th>Cjenovni rang</th>
+                <th>Mogućnost dostave</th>
+                <th>Godina otvaranja</th>
+                <th>Popularna jela</th>
+                <th>Cijena jela</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--AJAX dohvat-->
+
+            <button onclick="downloadData('json')">Preuzmi JSON</button>
+            <button onclick="downloadData('csv')">Preuzmi CSV</button>
+        </tbody>
+    </table>
+    <script>
+        //dohvacanje pdoataka
+        async function loadData() {
+            try {
+                const response = await fetch('http://localhost:3000/api/restorani');
+                const data = await response.json();
+                displayData(data);
+            } catch (error) {
+                console.error('Greska prilikom dohvacanja podataka:', error);
+            }
+        }
+        
+        //prikaz
+        function displayData(data) {
+            const dataTableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+            dataTableBody.innerHTML = ''; // clean trenutno
+        
+            data.forEach(item => {
+                const row = dataTableBody.insertRow();
+                row.insertCell(0).textContent = item.ime;
+                row.insertCell(1).textContent = item.tip_kuhinje;
+                row.insertCell(2).textContent = item.lokacija;
+                row.insertCell(3).textContent = item.radno_vrijeme;
+                row.insertCell(4).textContent = item.broj_sjedecih_mjesta;
+                row.insertCell(5).textContent = item.prosjecna_ocjena;
+                row.insertCell(6).textContent = item.cjenovni_rang;
+                row.insertCell(7).textContent = item.mogucnost_dostave;
+                row.insertCell(8).textContent = item.godina_otvaranja;
+                row.insertCell(9).textContent = item.naziv_jela || '-';
+                row.insertCell(10).textContent = item.cijena || '-';
+            });
+        }
+        
+        // filtriranje
+        async function filterData() {
+            const filterText = document.getElementById('filterText').value; //tekst koji nosimo u kucicu za trazenje
+            const filterAttribute = document.getElementById('filterAttribute').value; //atribut po kojem filtriramo
+            
+            const query = new URLSearchParams({
+                filterText: filterText,
+                filterAttribute: filterAttribute
+            });
+        
+            try {
+                const response = await fetch(`http://localhost:3000/api/restorani?${query}`);
+                const data = await response.json();
+                displayData(data);
+            } catch (error) {
+                console.error('Greska prilikom filtriranja podataka:', error);
+            }
+        }
+        
+        //download datoteka
+        function downloadData(format) {
+            const filterText = document.getElementById('filterText').value;
+            const filterAttribute = document.getElementById('filterAttribute').value;
+    
+            const query = new URLSearchParams({
+                filterText: filterText,
+                filterAttribute: filterAttribute
+            });
+    
+            const url = `http://localhost:3000/api/restorani/download/${format}?${query}`;
+            window.location.href = url;
+        }
+
+        // Poziv loadData prilikom učitavanja stranice
+        document.addEventListener('DOMContentLoaded', loadData);
+
+        </script>
+        
+</body>
+</html>

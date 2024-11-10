@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://or.fer.unizg.hr./restorani.json",
+    "type": "array",
+    "default": [],
+    "title": "Restorani",
+    "items": {
+        "type": "object",
+        "title": "Restoran",
+        "required": [
+            "ime",
+            "tip kuhinje",
+            "lokacija",
+            "radno vrijeme",
+            "broj sjedecih mjesta",
+            "ocjena",
+            "cjenovni rang",
+            "mogucnost dostave",
+            "godina otvaranja",
+            "popularna jela"
+        ],
+        "properties": {
+            "ime": {
+                "type": "string",
+                "title": "ime restorana"
+            },
+            "tip kuhinje": {
+                "type": "string",
+                "title": "tip kuhinje"
+            },
+            "lokacija": {
+                "type": "string",
+                "title": "lokacija"
+            },
+            "radno vrijeme": {
+                "type": "string",
+                "title": "radno vrijeme"
+               
+            },
+            "broj sjedecih mjesta": {
+                "type": "integer",
+                "title": "broj sjedecih mjesta"
+            },
+            "ocjena": {
+                "type": "number",
+                "title": "ocjena"
+            },
+            "cjenovni rang": {
+                "type": "string",
+                "title": "cjenovni rang"
+            },
+            "mogucnost dostave": {
+                "type": "boolean",
+                "title": "mogucnost dostave"
+            },
+            "godina otvaranja": {
+                "type": "integer",
+                "title": "godina otvaranja"
+            },
+            "popularna jela": {
+                "type": "array",
+                "title": "popularna jela",
+                "items": {
+                    "type": "object",
+                    "title": "popularno jelo",
+                    "required": [
+                        "ime",
+                        "cijena"
+                    ],
+                    "properties": {
+                        "ime": {
+                            "type": "string",
+                            "title": "ime"
+                        },
+                        "cijena": {
+                            "type": "number",
+                            "title": "cijena"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
