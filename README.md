@@ -7,7 +7,7 @@ Ovaj skup podataka sadrži informacije o različitim restoranima u Hrvatskoj, uk
 ## Metapodaci
 
 - **Autor**: Blaž Stužić
-- **Verzija**: 1.0
+- **Verzija**: 2.0
 - **Jezik**: Hrvatski
 - **Licenca**: Creative Commons CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 - **Format**: CSV, JSON
