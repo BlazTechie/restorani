@@ -21,9 +21,9 @@ app.use(express.static(path.join(__dirname, ''))); // Povezuje se s trenutnim di
 // za povezivanje na possgresql
 const pool = new Pool({
     user: 'postgres', 
-    host: 'localhost',
+    host: 'db',
     database: 'RestoraniDB',
-    password: 'bazepodataka',    
+    password: 'mojalozinka',    
     port: 5432,
 });
 

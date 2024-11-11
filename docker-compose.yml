@@ -1,17 +1,36 @@
-version: "3.1"
+version: '3.8'
 
 services:
-  restorani_spremnik:
-    image: restorani:latest
-    container_name: restorani_spremnik
+  # Node.js application
+  app:
+    build:
+      context: .  # The directory containing your Dockerfile and Node.js code
+    container_name: node_app
+    ports:
+      - "3000:3000"    # Map localhost:3000 to container port 3000
+    depends_on:
+      - db             # Ensure the database starts before the app
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5435
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=mojalozinka
+      - DATABASE_NAME=RestoraniDB
+
+  # PostgreSQL database
+  db:
+    image: postgres:15
+    container_name: postgres_db
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mojalozinka
       - POSTGRES_DB=RestoraniDB
     ports:
-      - "5435:5432"
+      - "5435:5435"    # Map localhost:5432 to container port 5432
     volumes:
-      - restorani_data:/var/lib/postgresql/data
+      - ./restorani.sql:/docker-entrypoint-initdb.d/restorani.sql  # Kopirajte dump u kontejner
 
+
+# Define a Docker volume for data persistence
 volumes:
-  restorani_data:
+  pgdata:
