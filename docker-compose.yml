@@ -2,20 +2,25 @@ version: '3.8'
 
 services:
   # Node.js application
-  app:
-    build:
-      context: .  # The directory containing your Dockerfile and Node.js code
-    container_name: node_app
+  #app:
+  backend:
+    #build:
+     # context: ./restorani-api  # The directory containing your Dockerfile and Node.js code #
+     #napravit cemo s image jer se tako trazi, ali radi i s build
+    image: restorani-backend:latest
+    container_name: restorani_api_app_v2
     ports:
       - "3000:3000"    # Map localhost:3000 to container port 3000
     depends_on:
       - db             # Ensure the database starts before the app
     environment:
       - DATABASE_HOST=db
-      - DATABASE_PORT=5435
+      - DATABASE_PORT=5432
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=mojalozinka
       - DATABASE_NAME=RestoraniDB
+    volumes:
+      - ./restorani-api:/app
 
   # PostgreSQL database
   db:

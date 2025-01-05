@@ -1,0 +1,16 @@
+{
+    "name": "restorani-api",
+    "version": "1.0.0",
+    "description": "API za upravljanje restoranima",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "json2csv": "^6.0.0-alpha.2",
+        "pg": "^8.9.0"
+    }
+}

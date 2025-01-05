@@ -1,0 +1,347 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API za upravljanje restoranima",
+        "description": "API za upravljanje informacijama o restoranima. Omogućuje CRUD operacije nad restoranima i dodatne funkcionalnosti.",
+        "version": "1.0.0",
+        "contact": {
+            "name": "Blaž Stužić",
+            "email": "blazstuzic2@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "server": [
+    {
+      "url": "http://localhost:3000/api/restorani",
+      "description": "Url za dohvacanje"
+    }
+  ],
+    "paths": {
+        "/api/restorani": {
+            "get": {
+                "summary": "Dohvat svih restorana",
+                "operationId": "getRestorani",
+                "tags": ["collection"],
+                "responses": {
+                    "200": {
+                        "description": "Fetched restaurant list",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/Restoran" }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "List of restaurants not found"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Dodavanje novog restorana",
+                "operationId": "createRestoran",
+                "tags": ["single"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/Restoran" }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successfully created new restaurant",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/Restoran" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/restorani/{id}": {
+            "get": {
+                "summary": "Dohvat restorana prema ID-u",
+                "operationId": "getRestoranById",
+                "tags": ["single"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" },
+                        "description": "ID restorana",
+                        "examples": {
+                            "example1": {
+                              "summary": "Restoran s ID-om 1",
+                              "value": 1
+                            },
+                            "example2": {
+                              "summary": "Restoran s ID-om 2",
+                              "value": 2
+                            },
+                            "example3": {
+                              "summary": "Restoran s ID-om 3",
+                              "value": 3
+                            }
+                          }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched restaurant by ID",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/Restoran" }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Restaurant not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Ažuriranje postojećeg restorana",
+                "operationId": "updateRestoran",
+                "tags": ["single"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" },
+                        "description": "ID restorana"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/Restoran" }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Restoran uspješno ažuriran",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/Restoran" }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Restoran nije pronađen"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Brisanje restorana prema ID-u",
+                "operationId": "deleteRestoran",
+                "tags": ["single"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" },
+                        "description": "ID restorana"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Restaurant successfully deleted"
+                    },
+                    "404": {
+                        "description": "Restaurant not found"
+                    }
+                }
+            }
+        },
+        "/api/restorani/popularnajela":{
+            "get": {
+                "summary": "Dohvat popularnih jela",
+                "operationId": "getPopularnaJela",
+                "tags": ["collection"],
+                "responses": {
+                    "200": {
+                        "description": "Fetched popular meals",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/PopularnoJelo" }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No popular meals found"
+                    }
+                }
+            }
+        },
+        "/api/restorani/dostava/{status}":{
+            "get": {
+                "summary": "Dohvat restorana prema statusu dostave",
+                "operationId": "getRestoraniPoDostavi",
+                "tags": ["collection"],
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "boolean" },
+                        "description": "Status dostave (true/false)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched restaurants with desired delivery status",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/Restoran" }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Restaurants with desired delivery status not found"
+                    }
+                }
+            }
+        },
+        "/api/restorani/cjenovni-rang/{rang}": {
+            "get": {
+                "summary": "Dohvat restorana prema cjenovnom rangu",
+                "operationId": "getRestoraniPoCjenovnomRangu",
+                "tags": ["collection"],
+                "parameters": [
+                    {
+                        "name": "rang",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "Cjenovni rang (npr. '$', '$$', '$$$')"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched restaurants with specified price range",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/Restoran" }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No restaurants found in the specified price range"
+                    }
+                }
+            }
+        },
+        "/api/restorani/kuhinja/{kuhinja}" : {
+            "get": {
+                "summary": "Dohvat restorana prema tipu kuhinje",
+                "operationId": "getRestoraniPoKuhinji",
+                "tags": ["collection"],
+                "parameters": [
+                    {
+                        "name": "kuhinja",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "Tip kuhinje (npr. 'talijanska', 'kineska')"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched restaurants for specified cuisine type",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/Restoran" }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No restaurants found for psecified cuisine type"
+                    }
+                }
+            }
+        },
+        "/api/restorani/openapi" : {
+            "get": {
+                "summary": "Prikaz OpenAPI specifikacije",
+                "operationId": "getOpenApiSpec",
+                "responses": {
+                    "200": {
+                        "description": "OpenAPi specification fetched successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Restoran": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "integer" },
+                    "ime": { "type": "string" },
+                    "tip_kuhinje": { "type": "string" },
+                    "lokacija": { "type": "string" },
+                    "radno_vrijeme": { "type": "string" },
+                    "broj_sjedecih_mjesta": { "type": "integer" },
+                    "prosjecna_ocjena": { "type": "number" },
+                    "cjenovni_rang": { "type": "string" },
+                    "mogucnost_dostave": { "type": "boolean" },
+                    "popularna_jela": {
+                        "type": "array",
+                        "items": { "$ref": "#/components/schemas/PopularnoJelo" }
+                    }
+                },
+                "required": [
+                    "ime", 
+                    "tip_kuhinje", 
+                    "lokacija", 
+                    "radno_vrijeme", 
+                    "broj_sjedecih_mjesta", 
+                    "prosjecna_ocjena",
+                    "cjenovni_rang", 
+                    "mogucnost_dostave"
+                ]
+            },
+            "PopularnoJelo": {
+                "type": "object",
+                "properties": {
+                    "ime": { "type": "string" },
+                    "cijena": { "type": "number" }
+                },
+                "required": ["ime", "cijena"]
+            }
+        }
+    }
+}
