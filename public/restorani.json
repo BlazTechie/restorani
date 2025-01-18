@@ -1,0 +1,473 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "ime": "name",
+    "tip_kuhinje": "servesCuisine",
+    "lokacija": "address",
+    "radno_vrijeme": "openingHours",
+    "prosjecna_ocjena": {
+      "@id": "aggregateRating",
+      "@type": "Number"
+    },
+    "cjenovni_rang": "priceRange",
+    "godina_otvaranja": {
+      "@id": "foundingDate",
+      "@type": "Date"
+    },
+    "popularna_jela": "menu",
+    "naziv_jela": "name",
+    "cijena_jela": "price",
+    "offers": {
+      "@type": "Offer",
+      "price": "priceCurrency"
+    }
+  },
+  "restorani": [
+    {
+      "@type": "Restaurant",
+      "ime": "La Štruk",
+      "tip_kuhinje": "tradicionalna",
+      "lokacija": "Skalinska 5, Zagreb",
+      "radno_vrijeme": "11:00 - 22:00",
+      "broj_sjedecih_mjesta": 30,
+      "prosjecna_ocjena": 4.5,
+      "cjenovni_rang": "$",
+      "mogucnost_dostave": true,
+      "godina_otvaranja": 2013,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Štrukli sa sirom",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "6.50",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Štrukli s tartufima",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "7.50",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Slatki štrukli s borovnicama",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "7.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Slatki štrukli s jabukama i cimetom",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "6.50",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Slatki štrukli s orasima i medom",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "7.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Konoba Mate",
+      "tip_kuhinje": "tradicionalna",
+      "lokacija": "Pupnat 28, Korčula",
+      "radno_vrijeme": "12:00 - 23:00",
+      "broj_sjedecih_mjesta": 50,
+      "prosjecna_ocjena": 4.7,
+      "cjenovni_rang": "$$",
+      "mogucnost_dostave": false,
+      "godina_otvaranja": 2000,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Pašticada s makarunima",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "25.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Fritaja od pršuta s divljim šparogama",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "12.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "ManO2",
+      "tip_kuhinje": "steakhouse",
+      "lokacija": "Radnička 50, Zagreb",
+      "radno_vrijeme": "12:00 - 01:00",
+      "broj_sjedecih_mjesta": 70,
+      "prosjecna_ocjena": 4.6,
+      "cjenovni_rang": "$$$",
+      "mogucnost_dostave": false,
+      "godina_otvaranja": 2012,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "ManO2 steak",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "48.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Jelen",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "63.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Wagyu kiwami",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "80.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Takenoko",
+      "tip_kuhinje": "japansko-peruanska",
+      "lokacija": "Preradovićeva ulica 22, Zagreb",
+      "radno_vrijeme": "12:00 - 00:00",
+      "broj_sjedecih_mjesta": 100,
+      "prosjecna_ocjena": 4.6,
+      "cjenovni_rang": "$$$",
+      "mogucnost_dostave": true,
+      "godina_otvaranja": 2000,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Panco calamari",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "17.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Crumbs pistachio sseabass",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "32.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Crni bakalar u saiko arančinom umaku",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "50.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Nikkei losos",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "30.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Curry Bowl",
+      "tip_kuhinje": "šrilankanska",
+      "lokacija": "Vlaška ulica 44, Zagreb",
+      "radno_vrijeme": "11:00 - 22:00",
+      "broj_sjedecih_mjesta": 50,
+      "prosjecna_ocjena": 4.7,
+      "cjenovni_rang": "$",
+      "mogucnost_dostave": true,
+      "godina_otvaranja": 2015,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Curry od piletine",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "12.50",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Kothu s piletinom",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "12.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Kiri malu",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "12.50",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "El Toro",
+      "tip_kuhinje": "steakhouse, latinoamerička",
+      "lokacija": "Ulica fra Filipa Grabovca 1, Zagreb",
+      "radno_vrijeme": "12:00 - 01:00",
+      "broj_sjedecih_mjesta": 80,
+      "prosjecna_ocjena": 4.7,
+      "cjenovni_rang": "$$",
+      "mogucnost_dostave": true,
+      "godina_otvaranja": 2017,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Tacos kozica",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "11.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "El Toro ceviche kozice",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "19.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Wagyu ribeye",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "33.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Beef wellington",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "295.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Vinodol",
+      "tip_kuhinje": "tradicionalona",
+      "lokacija": "Nikole Tesle 10, Zagreb",
+      "radno_vrijeme": "12:00 - 00:00",
+      "broj_sjedecih_mjesta": 130,
+      "prosjecna_ocjena": 4.5,
+      "cjenovni_rang": "$$",
+      "mogucnost_dostave": false,
+      "godina_otvaranja": 2000,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Gulaš od vepra i gljiva s njokima od brašna bučinih sjemenki",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "24.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Biftek s umakom od crnog vina i tartufa",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "40.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Domaći zagorski štrukli",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "11.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Pantarul",
+      "tip_kuhinje": "moderna",
+      "lokacija": "Kralja Tomislava 1, Dubrovnik",
+      "radno_vrijeme": "12:00 - 00:00",
+      "broj_sjedecih_mjesta": 60,
+      "prosjecna_ocjena": 4.8,
+      "cjenovni_rang": "$$",
+      "mogucnost_dostave": false,
+      "godina_otvaranja": 2014,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Sporo kuhani bikovi obraz",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "28.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Povrtni rižoto s mascarponeom",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "19.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Zapečena guščja jetra",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "28.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "Zinfandel's",
+      "tip_kuhinje": "mediteranska, moderna",
+      "lokacija": "Mihanovićeva 1, Zagreb ",
+      "radno_vrijeme": "06:30 - 23:00",
+      "broj_sjedecih_mjesta": 80,
+      "prosjecna_ocjena": 4.7,
+      "cjenovni_rang": "$$$",
+      "mogucnost_dostave": false,
+      "godina_otvaranja": 2004,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Poširani list s mousseom od limunske trave",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "45.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Kozlić",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "49.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Wagyu Entrecôte no. 4",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "63.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "ime": "L'oro Di Napoli",
+      "tip_kuhinje": "talijanska, napuljske pizze",
+      "lokacija": "Tkalčićeva ulica 70, Zagreb",
+      "radno_vrijeme": "12:00 - 22:30",
+      "broj_sjedecih_mjesta": 80,
+      "prosjecna_ocjena": 4.4,
+      "cjenovni_rang": "$$",
+      "mogucnost_dostave": true,
+      "godina_otvaranja": 2018,
+      "popularna_jela": [
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Margherita",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "8.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Napolitana",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "10.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Capricciosa",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "12.00",
+            "priceCurrency": "EUR"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "naziv_jela": "Lasagna",
+          "offers": {
+            "@type": "Offer",
+            "cijena_jela": "15.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      ]
+    }
+  ]
+}

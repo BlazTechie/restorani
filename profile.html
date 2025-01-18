@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korisnički profil</title>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('/api/profile')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP greška! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(user => {
+        const profileContainer = document.getElementById('profile-container');
+        profileContainer.innerHTML = `
+          <div class="profile-picture">
+            <img src="${user.picture}" alt="Profilna slika">
+          </div>
+          <div class="profile-info">
+            <p><strong>Ime:</strong> ${user.name}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Email verificiran:</strong> ${user.email_verified ? 'Da' : 'Ne'}</p>
+            <p><strong>Nadimak:</strong> ${user.nickname}</p>
+            <p><strong>Posljednja izmjena profila:</strong> ${new Date(user.lastUpdated).toLocaleString()}</p>
+          </div>
+          <a href="/api/restorani/refresh">Osvježi preslike</a>
+          <a href="/logout">Odjava</a>
+        `;
+      })
+      .catch(error => {
+        const profileContainer = document.getElementById('profile-container');
+        profileContainer.innerHTML = `
+          <p style="color: red; text-align: center;">Greška prilikom dohvaćanja podataka o korisniku. Pokušajte ponovno kasnije.</p>
+        `;
+        console.error('Greška:', error);
+      });
+  });
+ </script>
+</head>
+<body>
+  <h1>Korisnički profil</h1>
+  <div id="profile-container">
+    <!-- Podaci o korisniku će biti ubačeni ovdje -->
+  </div>
+  <!--<a href="/export-data">Osvježi preslike</a> -->
+  <a href="/">Nazad na index</a>
+</body>
+</html>
