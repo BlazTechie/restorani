@@ -27,7 +27,7 @@ const config = {
     authRequired: false,
     auth0Logout: true,
     //secret: 'YOUR_SECRET_KEY', // Promijenite u snažnu tajnu
-    secret: '5iyVf5NS_IsvkWdTJrRefwE0dL9sWbwIyjHEzUPMosFPpqo8nYdiGxAVkWBiqGi6',
+   // secret: '', //dodati na labosu radi sigurnosti
     baseURL: 'http://localhost:3000',
     clientID: 'j2MwtHRPyD154gsx8nKSkTbL3gfJUDeT',
     issuerBaseURL: 'https://dev-nn1rd7vwq33aatuv.eu.auth0.com'
